@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <fstream>
 
 using namespace std;
 
@@ -8,7 +9,7 @@ int main()
 
 	setlocale(0, "");
 
-	int a, b, c;
+	int a, b, num;
 
 	//1. Вывести на экран Первую букву имени из символов "*" (звездочка)	
 
@@ -32,7 +33,17 @@ int main()
 	//7. Пользователь вводит число.Выведите на экран квадрат этого числа, куб этого числа.
 
 	cout << "\nВведите число: ";
-	cin >> c;
-	cout << "Квадрат числа равен: " << c * c << "\nКуб числа равен: " << c * c * c;
+	cin >> num;
+	cout << "Квадрат числа равен: " << num * num << "\nКуб числа равен: " << num * num * num;
+
+	ofstream f;
+
+	f.open("Задача2.txt", ios::out);
+	f << "Периметр равен: " << sqrt((a * a) + (b * b)) + a + b << "\nПлощадь равна: " << (a * b) / 2;
+	f.close();
+
+	f.open("Задача7.txt", ios::out);
+	f << "Квадрат числа равен: " << num * num << "\nКуб числа равен: " << num * num * num;
+	f.close();
 
 }
